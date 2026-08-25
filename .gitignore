@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+.pnpm-store
+node_modules
+
+dist
+*.db
+
+backend/public
+config.yaml

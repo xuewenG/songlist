@@ -1,0 +1,30 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/go:1.25-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1.7": {
+      "version": "22"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "golang.go",
+        "qwtel.sqlite-viewer",
+        "Vue.volar"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install -g @openai/codex",
+  "remoteUser": "root",
+  "appPort": ["3000:3000"],
+  "containerEnv": {
+    "TZ": "Asia/Shanghai"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.codex,target=/root/.codex,type=bind,consistency=cached"
+  ]
+}
